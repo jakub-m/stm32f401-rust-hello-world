@@ -1,6 +1,11 @@
 {
   "cSpell.words": [
+    "cfgr",
+    "GPIOA",
     "gpioaen",
-    "gpiocen"
+    "GPIOC",
+    "gpiocen",
+    "Nucleo",
+    "sysclk"
   ]
 }
