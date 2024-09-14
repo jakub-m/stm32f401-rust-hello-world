@@ -39,14 +39,13 @@ cargo install svd2rust
 
 Install SVD from [STM](https://www.st.com/content/st_com/en/search.html#q=svd-t=resources-page=1).
 
+Blinking diode from [this post on dev.to](https://dev.to/theembeddedrustacean/stm32f4-embedded-rust-at-the-pac-gpio-control-20h4)
+
 ## HAL
 
 HAL example from [this page](https://github.com/stm32-rs/stm32f4xx-hal?tab=readme-ov-file)
 
 Followed [this post on dev.to](https://dev.to/theembeddedrustacean/stm32f4-embedded-rust-at-the-pac-svd2rust-457d)
-
-Blinking diode from [this post on dev.to](https://dev.to/theembeddedrustacean/stm32f4-embedded-rust-at-the-pac-gpio-control-20h4)
-
 
 [ref1]:https://github.com/phreaknik/stm32f3-rust-hello-world
 [ref2]:https://apollolabs.notion.site/STM32F4xx-VSCode-Project-Setup-3cdea2ce79f34a08a1a7e3f987e992a7
