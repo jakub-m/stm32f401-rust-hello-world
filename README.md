@@ -1,4 +1,4 @@
-Based on [stm32f3-rust-hello-world][ref1] (tried, didn't manage to build).
+Tried [stm32f3-rust-hello-world][ref1], did not manage to build it.
 
 Based on [STM32F4xx VSCode Project Setup][ref2]
 
@@ -10,6 +10,14 @@ Install OpenOCD:
 ```
 brew install openocd
 ```
+
+```
+cargo install svd2rust
+```
+
+Install SVD from [STM](https://www.st.com/content/st_com/en/search.html#q=svd-t=resources-page=1).
+
+Followed [this post on dev.to](https://dev.to/theembeddedrustacean/stm32f4-embedded-rust-at-the-pac-svd2rust-457d)
 
 Install [xargo][ref_xargo]
 
@@ -31,7 +39,6 @@ rustup default stable
 ```
 rustup component add rust-src --toolchain nightly
 ```
-
 
 ```
 touch Cargo.lock
