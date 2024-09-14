@@ -2,7 +2,6 @@ Tried [stm32f3-rust-hello-world][ref1], did not manage to build it.
 
 Based on [STM32F4xx VSCode Project Setup][ref2].
 
-
 Board manual from ST [here (pdf)](https://www.st.com/en/evaluation-tools/nucleo-f401re.html#documentation).
 
 MCU manual from ST [here (pdf)](https://www.st.com/en/microcontrollers-microprocessors/stm32f401re.html#documentation).
@@ -30,6 +29,7 @@ Useful:
 brew install binutils
 ```
 
+HAL example from [this page](https://github.com/stm32-rs/stm32f4xx-hal?tab=readme-ov-file)
 
 Install SVD from [STM](https://www.st.com/content/st_com/en/search.html#q=svd-t=resources-page=1).
 
@@ -56,19 +56,3 @@ rustup default stable
 ```
 rustup component add rust-src --toolchain nightly
 ```
-
-```
-touch Cargo.lock
-xargo generate-lockfile
-```
-
-xargo versions
-
-0.3.26 - error
-0.3.16 - `rust-src` error
-0.3.10 - `rust-src` error
-0.3.8 - `error: `rust-src` component not found. Run `rustup component add rust-src`
-0.2.3  - good
-
-
-% RUST_LOG=debug RUST_BACKTRACE=1 xargo build
