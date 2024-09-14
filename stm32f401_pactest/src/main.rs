@@ -1,9 +1,6 @@
 #![no_std]
 #![no_main]
 
-// use cortex_m_rt::entry;
-// use panic_halt as _;
-// use stm32f401_pac::Peripherals;
 
 use cortex_m_rt::entry;
 use panic_halt as _;
@@ -11,7 +8,6 @@ use stm32f401_pac as pac;
 
 #[entry]
 fn main() -> ! {
-    // let per = Peripherals::take().unwrap();
     let dp = pac::Peripherals::take().unwrap();
     dp.rcc
         .ahb1enr()

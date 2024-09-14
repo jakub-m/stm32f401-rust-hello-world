@@ -1,0 +1,10 @@
+[target.thumbv7em-none-eabihf]
+runner = "arm-none-eabi-gdb -q -x openocd.gdb"
+rustflags = [
+  "-C", "link-arg=-Tlink.x", # problem? https://users.rust-lang.org/t/embedded-rust-lld-error-memory-x-region-flash-already-defined/34788/2
+#   "-C", "linker=arm-none-eabi-ld",
+]
+
+
+[build]
+target = "thumbv7em-none-eabihf"     # Cortex-M4F and Cortex-M7F (with FPU)
