@@ -11,12 +11,17 @@ clean:
 	rm -rf target
 
 flash:
-	openocd -f interface/stlink.cfg -f $(elf_debug) -c "program your_file.elf verify reset exit"
+	openocd \
+        -f interface/stlink.cfg \
+        -f target/stm32f4x.cfg \
+		-c "program $(elf_debug) verify reset exit"
 
+# Seems not needed, build and release do the work.
 rustc:
 	cargo rustc --target $(target) -- \
       -C linker=arm-none-eabi-ld
 
+# binary is needed to flash using STM32CubeProgrammer
 objcopy:
 	arm-none-eabi-objcopy -v -O binary $(elf_debug) foo.bin
 

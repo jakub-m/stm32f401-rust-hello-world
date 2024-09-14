@@ -1,6 +1,9 @@
 #![no_std]
 #![no_main]
 
+// use cortex_m_rt::entry;
+// use panic_halt as _;
+// use stm32f401_pac::Peripherals;
 
 use cortex_m_rt::entry;
 use panic_halt as _;
@@ -8,6 +11,7 @@ use stm32f401_pac as pac;
 
 #[entry]
 fn main() -> ! {
+    // let per = Peripherals::take().unwrap();
     let dp = pac::Peripherals::take().unwrap();
     dp.rcc
         .ahb1enr()
@@ -16,9 +20,11 @@ fn main() -> ! {
     loop {
         // Read PC13 Input Value
         if !dp.gpioc.idr().read().idr13().bit() {
-            dp.gpioa.odr().write(|w| w.odr5().set_bit());
+            // Pushed
+            dp.gpioa.odr().write(|w| w.odr5().set_bit()); // LED up
         } else {
-            dp.gpioa.odr().write(|w| w.odr5().clear_bit());
+            // Off
+            dp.gpioa.odr().write(|w| w.odr5().clear_bit()); // LED down
         }
     }
 }
