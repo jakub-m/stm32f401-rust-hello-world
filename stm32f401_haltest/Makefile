@@ -1,6 +1,8 @@
 target=thumbv7em-none-eabihf
 elf_debug=./target/thumbv7em-none-eabihf/debug/stm32401_pactest
 
+
+$(elf_debug): build
 build:
 	cargo build --target $(target)
 
@@ -10,7 +12,7 @@ release:
 clean:
 	rm -rf target
 
-flash:
+flash: build
 	openocd \
         -f interface/stlink.cfg \
         -f target/stm32f4x.cfg \

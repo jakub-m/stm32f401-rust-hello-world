@@ -9,7 +9,7 @@
 use panic_halt as _; // panic handler
 
 use cortex_m_rt::entry;
-use stm32f4xx_hal as hal;
+use stm32f4xx_hal::{self as hal, gpio::PC13};
 
 use crate::hal::{pac, prelude::*};
 
@@ -23,6 +23,8 @@ fn main() -> ! {
         let gpioa = dp.GPIOA.split();
         let mut led = gpioa.pa5.into_push_pull_output();
 
+        let gpioc = dp.GPIOC.split();
+
         // Set up the system clock. We want to run at 48MHz for this one.
         let rcc = dp.RCC.constrain();
         let clocks = rcc.cfgr.sysclk(48.MHz()).freeze();
@@ -31,9 +33,11 @@ fn main() -> ! {
         let mut delay = cp.SYST.delay(&clocks);
 
         loop {
-            // On for 1s, off for 1s.
-            led.toggle();
-            delay.delay_ms(1000);
+            if gpioc.pc13.is_high() {
+                // On for 1s, off for 1s.
+                led.toggle();
+            }
+            delay.delay_ms(250);
         }
     }
 
