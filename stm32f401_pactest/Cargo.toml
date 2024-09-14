@@ -1,0 +1,10 @@
+[package]
+name = "stm32401_pactest"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cortex-m = { version = "0.7.7", features = ["critical-section-single-core"] }
+stm32f401_pac = { path = "../stm32f401_pac", features = ["rt", "critical-section"] }
+panic-halt = "0.2.0"
+cortex-m-rt = "0.7.2"

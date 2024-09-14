@@ -2,7 +2,7 @@
 authors = ["Jakub Mikians <2897102+jakub-m@users.noreply.github.com>"]
 edition = "2018"
 readme = "README.md"
-name = "quickstart"
+name = "stm32f401_pac"
 version = "0.1.0"
 
 [dependencies]
@@ -30,12 +30,12 @@ rt = ["cortex-m-rt/device"]
 # version = "0.13.1"
 # features = ["rt", "stm32f401"] # replace the model of your microcontroller here
 
-[[bin]]
-name = "quickstart"
-test = false
-bench = false
-
-[profile.release]
-codegen-units = 1 # better optimizations
-debug = true # symbols are nice and they don't increase the size on Flash
-lto = true # better optimizations
+# [[bin]]
+# name = "quickstart"
+# test = false
+# bench = false
+# 
+# [profile.release]
+# codegen-units = 1 # better optimizations
+# debug = true # symbols are nice and they don't increase the size on Flash
+# lto = true # better optimizations
